@@ -92,7 +92,6 @@
       grid-row: 3 / span 3;
     }
 
-    /* 依據截圖替換為橘色標籤背景 */
     .orange-cell {
       background-color: #fca385;
       color: #000000;
@@ -113,11 +112,10 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      pointer-events: none; /* Prevents touch/click native UI buttons on iPad */
+      pointer-events: none;
       -webkit-transform: translateZ(0);
     }
 
-    /* Remove WebKit play controls overlay on iOS/iPadOS */
     video::-webkit-media-controls {
       display: none !important;
     }
@@ -126,26 +124,19 @@
       -webkit-appearance: none !important;
     }
 
-    /* 右下角標記樣式（透明背景、白色文字加陰影） */
+    /* 右下角標記樣式（Delta ell 形式） */
     .l-overlay {
       position: absolute;
       bottom: 4px;
-      right: 8px;
+      right: 10px;
       color: #ffffff;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       pointer-events: none;
       text-shadow: 1px 1px 3px #000000, -1px -1px 3px #000000;
       z-index: 10;
       display: flex;
       align-items: center;
-    }
-
-    .l-bar-text {
-      text-decoration: overline;
-      font-style: italic;
-      display: inline-block;
-      margin-right: 4px;
     }
   </style>
 </head>
@@ -193,22 +184,23 @@
     
     <div class="video-cell" style="grid-column: 3; grid-row: 3;">
       <video src="l_-1_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay"><span class="l-bar-text">&ell;</span> = &minus;1</div>
+      <!-- 第一格完整顯示 Δℓ = 0 -->
+      <div class="l-overlay">&Delta;<span class="math">&ell;</span> = 0</div>
     </div>
 
     <div class="video-cell" style="grid-column: 4; grid-row: 3;">
       <video src="l_-1_lp_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">&minus;1/2</div>
+      <div class="l-overlay">1</div>
     </div>
 
     <div class="video-cell" style="grid-column: 5; grid-row: 3;">
       <video src="l_-1_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">0</div>
+      <div class="l-overlay">2</div>
     </div>
 
     <div class="video-cell" style="grid-column: 6; grid-row: 3;">
       <video src="l_-1_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">1/2</div>
+      <div class="l-overlay">3</div>
     </div>
 
     <!-- Row 2: Ell = 0 -->
@@ -218,7 +210,7 @@
 
     <div class="video-cell" style="grid-column: 3; grid-row: 4;">
       <video src="l_0_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">&minus;1/2</div>
+      <div class="l-overlay">&minus;1</div>
     </div>
 
     <div class="video-cell" style="grid-column: 4; grid-row: 4;">
@@ -228,12 +220,12 @@
 
     <div class="video-cell" style="grid-column: 5; grid-row: 4;">
       <video src="l_0_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">1/2</div>
+      <div class="l-overlay">1</div>
     </div>
 
     <div class="video-cell" style="grid-column: 6; grid-row: 4;">
       <video src="l_0_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">1</div>
+      <div class="l-overlay">2</div>
     </div>
 
     <!-- Row 3: Ell = 1 -->
@@ -243,22 +235,22 @@
 
     <div class="video-cell" style="grid-column: 3; grid-row: 5;">
       <video src="l_1_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">0</div>
+      <div class="l-overlay">&minus;2</div>
     </div>
 
     <div class="video-cell" style="grid-column: 4; grid-row: 5;">
       <video src="l_1_lp_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">1/2</div>
+      <div class="l-overlay">&minus;1</div>
     </div>
 
     <div class="video-cell" style="grid-column: 5; grid-row: 5;">
       <video src="l_1_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">1</div>
+      <div class="l-overlay">0</div>
     </div>
 
     <div class="video-cell" style="grid-column: 6; grid-row: 5;">
       <video src="l_1_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-      <div class="l-overlay">3/2</div>
+      <div class="l-overlay">1</div>
     </div>
 
   </div>
@@ -268,14 +260,12 @@
   async function syncAndPlayAllVideos() {
     const videos = Array.from(document.querySelectorAll('video'));
 
-    // Step 1: Ensure muted state is set programmatically BEFORE loading
     videos.forEach(v => {
       v.muted = true;
       v.defaultMuted = true;
       v.pause();
     });
 
-    // Step 2: Wait until every video has loaded enough frame data (readyState >= 2)
     const loadPromises = videos.map(v => {
       return new Promise((resolve) => {
         if (v.readyState >= 2) {
@@ -289,15 +279,12 @@
 
     await Promise.all(loadPromises);
 
-    // Step 3: Align playback time to 0.0 seconds across all videos
     videos.forEach(v => {
       v.currentTime = 0;
     });
 
-    // Step 4: Batch play simultaneously
     const playPromises = videos.map(v => v.play());
     
-    // Fallback trigger for iOS/iPad initial user interaction policy
     Promise.all(playPromises).catch(() => {
       const forcePlayOnInteraction = () => {
         videos.forEach(v => {
