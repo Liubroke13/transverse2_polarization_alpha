@@ -28,7 +28,7 @@
       text-align: center;
       font-size: 0.95rem;
       width: 100%;
-      max-width: 960px;
+      max-width: 1300px;
       box-sizing: border-box;
     }
 
@@ -40,7 +40,7 @@
 
     .slide-container {
       width: 100%;
-      max-width: 960px;
+      max-width: 1300px;
     }
 
     .slide-title {
@@ -146,7 +146,7 @@
 
     .animation-grid {
       display: grid;
-      grid-template-columns: 70px 70px repeat(4, 1fr);
+      grid-template-columns: 60px 60px repeat(4, 1fr);
       grid-template-rows: 35px 35px repeat(3, 1fr);
       gap: 2px;
       background-color: #ffffff;
@@ -197,6 +197,10 @@
       display: block;
       pointer-events: none;
       -webkit-transform: translateZ(0);
+
+      /* 防止細線因縮放被模糊吃掉的 CSS 屬性 */
+      image-rendering: -webkit-optimize-contrast; /* 提高對比度與線條銳利度 */
+      image-rendering: crisp-edges;
     }
 
     video::-webkit-media-controls {
